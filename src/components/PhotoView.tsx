@@ -1,13 +1,17 @@
 import React from "react";
 import { Photo } from "../models/photo"
 
-// function PhotoView ({photo: Photo}) {
-    
-//     return (
-//         <>
-//             <div>{Photo.photoUrl}</div>
-//         </>
-//     )
-// }
+interface PhotoViewProp {
+    photo: Photo
+}
 
-// export default PhotoView
+function PhotoView ({photo}: PhotoViewProp) {
+    
+    return (
+        <>
+            <div><img src ={photo.photoUrl}/></div>
+        </>
+    )
+}
+
+export default PhotoView

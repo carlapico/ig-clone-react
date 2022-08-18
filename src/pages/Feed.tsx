@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import PhotoView from "../components/PhotoView";
 import { Photo } from "../models/photo"
-// import PhotoView from "../components/PhotoView";
 import "./Feed.css"
 
 function Feed () {
@@ -20,8 +20,10 @@ function Feed () {
             <h1> The Feed </h1>
             <div>
                 {photos.map((photo: Photo) => {
-                    return <div><img src={photo.photoUrl} /></div>
-                })}
+                    return <PhotoView key={photo._id} photo={photo} />
+                    // return <div><img src={photo.photoUrl} /></div>
+                    })
+                }
             </div>
         </>
     )
